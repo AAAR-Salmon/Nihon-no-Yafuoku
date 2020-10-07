@@ -23,12 +23,14 @@
 		v.addEventListener('keydown', event => {
 			event.preventDefault();
 			const keyName = event.key;
-			if (keyName === ' ') {
-				if (v.paused) {
-					v.play();
-				} else {
-					v.pause();
-				}
+			switch (keyName) {
+				case ' ':
+					if (v.paused) {
+						v.play();
+					} else {
+						v.pause();
+					}
+					break;
 			}
 		});
 	});
