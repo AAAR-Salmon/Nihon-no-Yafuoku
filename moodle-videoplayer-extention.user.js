@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Moodle Videoplayer Extention
 // @namespace    http://aarsalmon.starfree.jp/
-// @version      0.1
+// @version      0.1.1
 // @description  ブラウザの標準ビデオプレーヤーを拡張します(岡大Moodle専用)
 // @author       You
 // @match        https://moodle.el.okayama-u.ac.jp/*
@@ -38,10 +38,10 @@
 					v.currentTime -= 5;
 					break;
 				case 'ArrowUp':
-					v.volume = v.volume >= 0.1 ? v.volume - 0.1 : 0;
+					v.volume = v.volume <= 0.9 ? v.volume + 0.1 : 1;
 					break;
 				case 'ArrowDown':
-					v.volume = v.volume <= 0.9 ? v.volume + 0.1 : 1;
+					v.volume = v.volume >= 0.1 ? v.volume - 0.1 : 0;
 					break;
 				case '>':
 					if (v.playbackRate < 3) {
