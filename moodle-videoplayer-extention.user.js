@@ -24,11 +24,33 @@
 			event.preventDefault();
 			const keyName = event.key;
 			switch (keyName) {
-				case ' ':
+				case ' ': //space
 					if (v.paused) {
 						v.play();
 					} else {
 						v.pause();
+					}
+					break;
+				case 'ArrowRight':
+					v.currentTime += 5;
+					break;
+				case 'ArrowLeft':
+					v.currentTime -= 5;
+					break;
+				case 'ArrowUp':
+					v.volume = v.volume >= 0.1 ? v.volume - 0.1 : 0;
+					break;
+				case 'ArrowDown':
+					v.volume = v.volume <= 0.9 ? v.volume + 0.1 : 1;
+					break;
+				case '>':
+					if (v.playbackRate < 3) {
+						v.playbackRate += 0.25;
+					}
+					break;
+				case '<':
+					if (v.playbackRate > 0.25) {
+						v.playbackRate -= 0.25;
 					}
 					break;
 			}
