@@ -26,7 +26,7 @@
 
 # バグ報告/機能の要望
 
-[GitHubのIssue](https://github.com/AAAR-Salmon/Userscripts/issues)か、[作者のTwitter](https://twitter.com/AAAR_Salmon)にて受け付けております。
+[GitHubのIssue](https://github.com/AAAR-Salmon/Userscripts/issues)かGreasy Forkのフィードバックにて受け付けております。
 
 # 免責事項
 
