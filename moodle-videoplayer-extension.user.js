@@ -14,7 +14,7 @@
 	var style = document.createElement('style');
 	style.textContent = `
 		.mediaplugin_videojs > div {
-			width: 100vh;
+			width: 100vw;
 			max-width: 100% !important;
 		}`;
 	document.head.appendChild(style);
