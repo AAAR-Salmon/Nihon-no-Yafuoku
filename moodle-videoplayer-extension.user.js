@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Moodle Videoplayer Extention
 // @namespace    http://aarsalmon.starfree.jp/
-// @version      0.1.1
+// @version      0.1.2
 // @description  ブラウザの標準ビデオプレーヤーを拡張します(岡大Moodle専用)
-// @author       You
+// @author       aaar_salmon
 // @match        https://moodle.el.okayama-u.ac.jp/*
 // @grant        none
 // ==/UserScript==
