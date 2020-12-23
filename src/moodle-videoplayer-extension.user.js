@@ -3,7 +3,7 @@
 // @namespace    http://aarsalmon.starfree.jp/
 // @version      0.1.2
 // @description  ブラウザの標準ビデオプレーヤーを拡張します(岡大Moodle専用)
-// @author       aaar_salmon
+// @author       AAAR_Salmon
 // @match        https://moodle.el.okayama-u.ac.jp/*
 // @grant        none
 // ==/UserScript==

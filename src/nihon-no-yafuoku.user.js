@@ -3,7 +3,7 @@
 // @namespace    http://aarsalmon.starfree.jp/
 // @version      1.0
 // @description  ヤフオクでワンクリックで国内からの出品に限定して検索できます。
-// @author       aaar_salmon
+// @author       AAAR_Salmon
 // @match        https://auctions.yahoo.co.jp/search/search?*
 // @grant        none
 // ==/UserScript==
