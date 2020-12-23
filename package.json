@@ -1,0 +1,24 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "description": "AAAR Salmon 作のユーザースクリプト置き場です",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AAAR-Salmon/Userscripts.git"
+  },
+  "author": "AAAR_Salmon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AAAR-Salmon/Userscripts/issues"
+  },
+  "homepage": "https://github.com/AAAR-Salmon/Userscripts#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11"
+  }
+}
