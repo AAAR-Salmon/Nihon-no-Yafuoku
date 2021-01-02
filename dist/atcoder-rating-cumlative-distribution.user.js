@@ -13,9 +13,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 // ==UserScript==
-// @name         AtCoder Rating Cumlative Distribution
+// @name         AtCoder Rating Cumulative Distribution
 // @namespace    http://aarsalmon.starfree.jp/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Rating分布を累積表示、累積パーセント表示します
 // @author       AAAR_Salmon
 // @match        https://atcoder.jp/users/*?graph=dist
@@ -24,16 +24,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 (function () {
   'use strict';
 
-  var distribution = _toConsumableArray(data);
+  var dist = _toConsumableArray(data);
 
-  var cumlativeDistribution = _toConsumableArray(data);
+  var cumDist = _toConsumableArray(data);
 
-  for (var i = cumlativeDistribution.length - 1; i > 0; i--) {
-    cumlativeDistribution[i - 1] += cumlativeDistribution[i];
+  for (var i = cumDist.length - 1; i > 0; i--) {
+    cumDist[i - 1] += cumDist[i];
   }
 
-  var totalActiveUsers = cumlativeDistribution[0];
-  var percentageCumlativeDistribution = cumlativeDistribution.map(function (v) {
+  var totalActiveUsers = cumDist[0];
+  var percentCumDist = cumDist.map(function (v) {
     return Math.round(v / totalActiveUsers * 100 * 1000) / 1000;
   });
   var parentNode = document.querySelector('[role="group"]').parentNode;
@@ -46,7 +46,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   var buttonNum = button.cloneNode(false);
 
   buttonNum.onclick = function () {
-    data = distribution;
+    data = dist;
     $(window).load();
   };
 
@@ -54,7 +54,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   var buttonCumNum = button.cloneNode(false);
 
   buttonCumNum.onclick = function () {
-    data = cumlativeDistribution;
+    data = cumDist;
     $(window).load();
   };
 
@@ -62,7 +62,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   var buttonCumPercent = button.cloneNode(false);
 
   buttonCumPercent.onclick = function () {
-    data = percentageCumlativeDistribution;
+    data = percentCumDist;
     $(window).load();
   };
 

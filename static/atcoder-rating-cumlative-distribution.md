@@ -1,6 +1,6 @@
-# About AtCoder Rating Cumlative Distribution
+# About AtCoder Rating Cumulative Distribution
 
-**AtCoder Rating Cumlative Distribution** は、AtCoder のユーザーページでRating分布の表示オプションを追加するスクリプトです。
+**AtCoder Rating Cumulative Distribution** は、AtCoder のユーザーページでRating分布の表示オプションを追加するスクリプトです。
 
 # 使い方
 
