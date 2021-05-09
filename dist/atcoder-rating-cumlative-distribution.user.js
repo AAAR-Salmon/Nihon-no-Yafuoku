@@ -15,7 +15,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // ==UserScript==
 // @name         AtCoder Rating Cumulative Distribution
 // @namespace    http://aarsalmon.starfree.jp/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Rating分布を累積表示、累積パーセント表示します
 // @author       AAAR_Salmon
 // @match        https://atcoder.jp/users/*?graph=dist
@@ -23,6 +23,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // ==/UserScript==
 (function () {
   'use strict';
+
+  var canvasGraph = document.getElementById('ratingDistributionGraph');
 
   var dist = _toConsumableArray(data);
 
@@ -44,29 +46,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   button.classList.add('btn', 'btn-default');
   button.setAttribute('type', 'button');
   var buttonNum = button.cloneNode(false);
-
-  buttonNum.onclick = function () {
-    data = dist;
-    $(window).load();
-  };
-
   buttonNum.innerText = '#';
   var buttonCumNum = button.cloneNode(false);
-
-  buttonCumNum.onclick = function () {
-    data = cumDist;
-    $(window).load();
-  };
-
   buttonCumNum.innerText = '累積#';
   var buttonCumPercent = button.cloneNode(false);
-
-  buttonCumPercent.onclick = function () {
-    data = percentCumDist;
-    $(window).load();
-  };
-
   buttonCumPercent.innerText = '累積%';
+
+  function updateGraphFunction(data) {
+    return function () {
+      canvasGraph.width = 640;
+      canvasGraph.height = 480;
+      window.data = data;
+      $(window).load();
+    };
+  }
+
+  buttonNum.onclick = updateGraphFunction(dist);
+  buttonCumNum.onclick = updateGraphFunction(cumDist);
+  buttonCumPercent.onclick = updateGraphFunction(percentCumDist);
   [buttonNum, buttonCumNum, buttonCumPercent].forEach(function (btn) {
     groupButton.appendChild(btn);
   });
